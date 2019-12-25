@@ -156,7 +156,7 @@ class GoldenEye(object):
 
         # Taunt!
         print
-        print GOLDENEYE_BANNER
+        print (GOLDENEYE_BANNER)
         print
 
     # Do the fun!
@@ -166,7 +166,7 @@ class GoldenEye(object):
         print "Hitting webserver in mode '{0}' with {1} workers running {2} connections each. Hit CTRL+C to cancel.".format(self.method, self.nr_workers, self.nr_sockets)
 
         if DEBUG:
-            print "Starting {0} concurrent workers".format(self.nr_workers)
+            print ("Starting {0} concurrent workers".format(self.nr_workers))
 
         # Start workers
         for i in range(int(self.nr_workers)):
@@ -192,10 +192,10 @@ class GoldenEye(object):
         try:
             if self.counter[0] > 0 or self.counter[1] > 0:
 
-                print "{0} GoldenEye strikes hit. ({1} Failed)".format(self.counter[0], self.counter[1])
+                print ("{0} GoldenEye strikes hit. ({1} Failed)".format(self.counter[0], self.counter[1]))
 
                 if self.counter[0] > 0 and self.counter[1] > 0 and self.last_counter[0] == self.counter[0] and self.counter[1] > self.last_counter[1]:
-                    print "\tServer may be DOWN!"
+                    print ("\tServer may be DOWN!")
     
                 self.last_counter[0] = self.counter[0]
                 self.last_counter[1] = self.counter[1]
@@ -214,11 +214,11 @@ class GoldenEye(object):
                 self.stats()
 
             except (KeyboardInterrupt, SystemExit):
-                print "CTRL+C received. Killing all workers"
+                print ("CTRL+C received. Killing all workers")
                 for worker in self.workersQueue:
                     try:
                         if DEBUG:
-                            print "Killing worker {0}".format(worker.name)
+                            print ("Killing worker {0}".format(worker.name))
                         #worker.terminate()
                         worker.stop()
                     except Exception, ex:
@@ -310,7 +310,7 @@ class Striker(Process):
     def run(self):
 
         if DEBUG:
-            print "Starting worker {0}".format(self.name)
+            print ("Starting worker {0}".format(self.name))
 
         while self.runnable:
 
@@ -351,7 +351,7 @@ class Striker(Process):
                     pass # silently ignore
 
         if DEBUG:
-            print "Worker {0} completed run. Sleeping...".format(self.name)
+            print ("Worker {0} completed run. Sleeping...".format(self.name))
             
     def closeConnections(self):
         for conn in self.socks:
@@ -545,21 +545,21 @@ def usage():
     print
     print '-----------------------------------------------------------------------------------------------------------'
     print
-    print GOLDENEYE_BANNER
+    print (GOLDENEYE_BANNER)
     print 
-    print ' USAGE: ./goldeneye.py <url> [OPTIONS]'
+    print (' USAGE: ./goldeneye.py <url> [OPTIONS]')
     print
-    print ' OPTIONS:'
-    print '\t Flag\t\t\tDescription\t\t\t\t\t\tDefault'
-    print '\t -u, --useragents\tFile with user-agents to use\t\t\t\t(default: randomly generated)'
-    print '\t -w, --workers\t\tNumber of concurrent workers\t\t\t\t(default: {0})'.format(DEFAULT_WORKERS)
-    print '\t -s, --sockets\t\tNumber of concurrent sockets\t\t\t\t(default: {0})'.format(DEFAULT_SOCKETS)
-    print '\t -m, --method\t\tHTTP Method to use \'get\' or \'post\'  or \'random\'\t\t(default: get)'
-    print '\t -n, --nosslcheck\tDo not verify SSL Certificate\t\t\t\t(default: True)'
-    print '\t -d, --debug\t\tEnable Debug Mode [more verbose output]\t\t\t(default: False)'
-    print '\t -h, --help\t\tShows this help'
+    print (' OPTIONS:')
+    print ('\t Flag\t\t\tDescription\t\t\t\t\t\tDefault')
+    print ('\t -u, --useragents\tFile with user-agents to use\t\t\t\t(default: randomly generated)'
+    print ('\t -w, --workers\t\tNumber of concurrent workers\t\t\t\t(default: {0})'.format(DEFAULT_WORKERS))
+    print ('\t -s, --sockets\t\tNumber of concurrent sockets\t\t\t\t(default: {0})'.format(DEFAULT_SOCKETS))
+    print ('\t -m, --method\t\tHTTP Method to use \'get\' or \'post\'  or \'random\'\t\t(default: get)')
+    print ('\t -n, --nosslcheck\tDo not verify SSL Certificate\t\t\t\t(default: True)')
+    print ('\t -d, --debug\t\tEnable Debug Mode [more verbose output]\t\t\t(default: False)')
+    print ('\t -h, --help\t\tShows this help')
     print
-    print '-----------------------------------------------------------------------------------------------------------'
+    print ('-----------------------------------------------------------------------------------------------------------')
 
     
 def error(msg):
