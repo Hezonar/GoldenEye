@@ -147,7 +147,7 @@ class GoldenEye(object):
 
     def exit(self):
         self.stats()
-        print "Shutting down GoldenEye"
+        print ("Shutting down GoldenEye")
 
     def __del__(self):
         self.exit()
