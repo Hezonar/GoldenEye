@@ -625,7 +625,7 @@ def main():
 
         goldeneye.fire()
 
-    except getopt.GetoptError, err:
+    except (getopt.GetoptError, err):
 
         # print help information and exit:
         sys.stderr.write(str(err))
