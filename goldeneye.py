@@ -544,21 +544,6 @@ class Striker(Process):
 def usage():
     print
     print ('-----------------------------------------------------------------------------------------------------------')
-    print
-    print (GOLDENEYE_BANNER)
-    print 
-    print (' USAGE: ./goldeneye.py <url> [OPTIONS]')
-    print
-    print (' OPTIONS:')
-    print ('\t Flag\t\t\tDescription\t\t\t\t\t\tDefault')
-    print ('\t -u, --useragents\tFile with user-agents to use\t\t\t\t(default: randomly generated)'
-    print ('\t -w, --workers\t\tNumber of concurrent workers\t\t\t\t(default: {0})'.format(DEFAULT_WORKERS))
-    print ('\t -s, --sockets\t\tNumber of concurrent sockets\t\t\t\t(default: {0})'.format(DEFAULT_SOCKETS))
-    print ('\t -m, --method\t\tHTTP Method to use \'get\' or \'post\'  or \'random\'\t\t(default: get)')
-    print ('\t -n, --nosslcheck\tDo not verify SSL Certificate\t\t\t\t(default: True)')
-    print ('\t -d, --debug\t\tEnable Debug Mode [more verbose output]\t\t\t(default: False)')
-    print ('\t -h, --help\t\tShows this help')
-    print
     print ('-----------------------------------------------------------------------------------------------------------')
 
     
