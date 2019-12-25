@@ -163,7 +163,7 @@ class GoldenEye(object):
     def fire(self):
 
         self.printHeader()
-        print "Hitting webserver in mode '{0}' with {1} workers running {2} connections each. Hit CTRL+C to cancel.".format(self.method, self.nr_workers, self.nr_sockets)
+        print ("Hitting webserver in mode '{0}' with {1} workers running {2} connections each. Hit CTRL+C to cancel.".format(self.method, self.nr_workers, self.nr_sockets))
 
         if DEBUG:
             print ("Starting {0} concurrent workers".format(self.nr_workers))
@@ -184,7 +184,7 @@ class GoldenEye(object):
                 pass 
 
         if DEBUG:
-            print "Initiating monitor"
+            print ("Initiating monitor")
         self.monitor()
 
     def stats(self):
